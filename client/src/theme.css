@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+@import "tailwindcss";
+@import "tailwindcss-safe-area";
+
+@theme {
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 36px;
+  --text-4xl: 36px;
+  --text-4xl--line-height: 40px;
+  --text-5xl: 48px;
+  --text-5xl--line-height: 52px;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #fff6ea;
+  --surface: #fffdf8;
+  --surface-alt: #ffedd6;
+  --text: #4a3525;
+  --dim: #9a7d63;
+  --border: #f0ddc4;
+  --accent: #f2a93b;
+  --accent-deep: #d9822b;
+  --pink: #f28ba8;
+  --mint: #7fbf9e;
+  --radius: 18px;
+  --space-surface: var(--surface);
+  --space-surface-alt: var(--surface-alt);
+  --space-muted: var(--dim);
+  --space-border: var(--border);
+  --space-accent: var(--accent);
+  --font-display: "ZCOOL KuaiLe", "PingFang SC", "Hiragino Sans GB", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #241a12;
+    --surface: #32241a;
+    --surface-alt: #3d2c1f;
+    --text: #f7e8d5;
+    --dim: #c2a586;
+    --border: #4d3826;
+    --accent: #f2a93b;
+    --accent-deep: #ffb84d;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Phone tap targets: at least 32px tall. */
+@layer base {
+  button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) {
+    min-height: 2rem;
+  }
+}
+
+@keyframes float-up {
+  0% { opacity: 0; transform: translateY(6px) scale(0.9); }
+  15% { opacity: 1; transform: translateY(0) scale(1.05); }
+  30% { transform: translateY(-2px) scale(1); }
+  100% { opacity: 1; transform: translateY(-4px) scale(1); }
+}
+.toast-pop {
+  animation: float-up 0.45s ease-out both;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+.wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast-pop, .wiggle { animation: none; }
+}

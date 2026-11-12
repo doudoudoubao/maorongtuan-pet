@@ -1,0 +1,5 @@
+CREATE TABLE learned_skills (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  skill_key TEXT NOT NULL UNIQUE,
+  learned_at INTEGER NOT NULL
+);

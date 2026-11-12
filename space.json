@@ -1,0 +1,8 @@
+{
+  "runtime": "typescript",
+  "platformVersion": 28,
+  "entry": "client/dist/index.html",
+  "name": "毛绒团培育小屋",
+  "slug": "mao-rong-tuan-pei-yu-xiao-wu",
+  "managedCronJobs": []
+}
