@@ -1,0 +1,22 @@
+# 运行时存档与本地数据（绝不入库）
+app.db
+app.db-shm
+app.db-wal
+*.db
+*.db-shm
+*.db-wal
+
+# 依赖与构建产物
+node_modules/
+dist/
+
+# 内部工作目录
+audits/
+
+# 同步记录与临时文件
+*.muse-github-snapshot-sync.json
+*.tmp-*
+
+# 系统与编辑器
+.DS_Store
+*.log
